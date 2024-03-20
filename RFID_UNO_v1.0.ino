@@ -57,7 +57,6 @@ void loop() {
 
 int checkRFID(int i) {
 
-  ser = 0;
 
   if (i == 0) {
     rfid.begin(2, 5, 6, 8, 3, 7);
@@ -72,7 +71,7 @@ int checkRFID(int i) {
     rfid.begin(2, 5, 6, 11, 3, 7);
   }
 
-  delay(150);
+  delay(100);
   rfid.init();
 
   uchar status;
