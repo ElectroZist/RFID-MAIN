@@ -15,10 +15,10 @@ bool check_rfid = false;
 int Out1 = A5;
 int buzzer = A4;
 
-int rfidCard1 = 470;
-int rfidCard2 = 421;
-int rfidCard3 = 496;
-int rfidCard4 = 548;
+int rfidCard1 = 470; //insert value of Tag1
+int rfidCard2 = 421; //insert value of Tag2
+int rfidCard3 = 496; //insert value of Tag3
+int rfidCard4 = 548; //insert value of Tag4
 
 
 void setup() {
@@ -76,6 +76,12 @@ int checkRFID(int i) {
   rfid.init();
 
   uchar status;
+  serNum[0] = 0;
+  serNum[1] = 0;
+  serNum[2] = 0;
+  serNum[3] = 0;
+  serNum[4] = 0;
+  serNum[5] = 0;
   uchar str[MAX_LEN];
   // Search card, return card types
   status = rfid.request(PICC_REQIDL, str);
